@@ -5,3 +5,11 @@ install:
   - npm install
 script:
   - PORT=0 npm test
+deploy:
+  provider: script
+  script: bash deploy-heroku.sh
+  on:
+    branch: main
+env:
+  global:
+    secure: "ENCRYPTED VALUE"
